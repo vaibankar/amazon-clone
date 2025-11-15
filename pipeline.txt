@@ -1,0 +1,68 @@
+pipeline{
+    agent any
+    tools{
+        jdk 'jdk17'
+        nodejs 'node16'
+    }
+    environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+    stages {
+        stage('clean workspace'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage('Checkout from Git'){
+            steps{
+                <your-github-repo>
+            }
+        }
+        stage("Sonarqube Analysis "){
+            steps{
+                withSonarQubeEnv('sonar-server') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Amazon \
+                    -Dsonar.projectKey=Amazon '''
+                }
+            }
+        }
+        stage("quality gate"){
+           steps {
+                script {
+                    waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-token' 
+                }
+            } 
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh "npm install"
+            }
+        }
+        stage('TRIVY FS SCAN') {
+            steps {
+                sh "trivy fs . > trivyfs.txt"
+            }
+        }
+        stage("Docker Build & Push"){
+            steps{
+                script{
+                   withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                       sh "docker build -t amazon-clone ."
+                       sh "docker tag amazon-clone <your-dockerhub-name/reponame:tagname> "
+                       sh "docker push <your-dockerhub-name/reponame:tagname> "
+                    }
+                }
+            }
+        }
+        stage("TRIVY"){
+            steps{
+                sh "trivy image <your-dockerhub-name/reponame:tagname> > trivyimage.txt" 
+            }
+        }
+       stage('Deploy to container'){
+            steps{
+                sh 'docker run -d --name amazon-clone -p 3000:3000 <your-dockerhub-name/reponame:tagname>'
+            }
+        }
+    }
+}
