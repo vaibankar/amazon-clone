@@ -206,7 +206,7 @@ trivy --version
 
 ### Step 3 — Set up Essential Plugins: JDK, Sonarqube Scanner, NodeJs, and OWASP Dependency Check
 
-### 4A — Plugin Installation Process
+### 3A — Plugin Installation Process
 
 Navigate to Manage Jenkins → Plugins → Available Plugins →
 
@@ -222,7 +222,7 @@ Proceed with the installation of the following plugins:
 
 ---
 
-### 4B — Set Up Java and Node.js in Global Tool Configuration
+### 3B — Set Up Java and Node.js in Global Tool Configuration
 
 Navigate to Manage Jenkins → Tools → Install JDK 17 and Node.js 16 → Press Apply and Save to confirm changes.
 
@@ -498,6 +498,7 @@ terraform destroy --auto-approve
 <img width="721" height="635" alt="image" src="https://github.com/user-attachments/assets/029e5484-5d50-4408-8abe-38c907300046" />
 
 ---
+
 
 
 
