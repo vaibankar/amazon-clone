@@ -1,6 +1,36 @@
 # Amazon-clone Deploy on Container
 
-### Step 1: Configure AWS in VS Code or CMD or instance
+## Architecture
+
+<img width="1240" height="640" alt="image" src="https://github.com/user-attachments/assets/1281fbca-4e9e-4d59-92f9-e58d988cbc66" />
+
+---
+### Step 1: IAM User Creation
+
+1.Access the AWS Console
+2.Locate and select the “Search” field.
+3. Navigate IAM Options
+4. Click on “Users”
+5. Click ‘Create Users’
+6. Click the “User name” field.
+7.Enter the name you’d like to send warm wishes to or express your thoughts about.
+8.Click Next to spread joy and positivity!
+9.Access the “Attach policies directly” feature by clicking.
+  Check this box with administrator privileges.
+
+<img width="1137" height="550" alt="image" src="https://github.com/user-attachments/assets/e1f15032-914e-4c98-a21b-0b25e02c2ae5" />
+
+10.Click “Next”
+11.Click “Create User”
+12.Select the recently generated user, in this instance, User01.
+13.Open the “Security credentials” tab and click.
+14.Generate Access Key
+15.Select this radio button using the Command Line Interface (CLI)
+16.Click Next
+17.Download your data in .csv format
+
+---
+### Step 2: Configure AWS in VS Code or CMD or instance
 
 Navigate to either VS Code or CMD based on your preference.
 ```
@@ -12,7 +42,7 @@ Provide your Aws Access key and Secret Access key
 <img width="1053" height="255" alt="image" src="https://github.com/user-attachments/assets/c546e145-d886-423f-9b27-b0cd9065e601" />
 
 ---
-### Step 2: Implement Terraform Configuration for Jenkins and SonarQube Provisioning
+### Step 3: Implement Terraform Configuration for Jenkins and SonarQube Provisioning
 
 ## main.tf
 
@@ -204,9 +234,9 @@ trivy --version
 
 ---
 
-### Step 3 — Set up Essential Plugins: JDK, Sonarqube Scanner, NodeJs, and OWASP Dependency Check
+### Step 4 — Set up Essential Plugins: JDK, Sonarqube Scanner, NodeJs, and OWASP Dependency Check
 
-### 3A — Plugin Installation Process
+### 4A — Plugin Installation Process
 
 Navigate to Manage Jenkins → Plugins → Available Plugins →
 
@@ -222,7 +252,7 @@ Proceed with the installation of the following plugins:
 
 ---
 
-### 3B — Set Up Java and Node.js in Global Tool Configuration
+### 4B — Set Up Java and Node.js in Global Tool Configuration
 
 Navigate to Manage Jenkins → Tools → Install JDK 17 and Node.js 16 → Press Apply and Save to confirm changes.
 
@@ -234,7 +264,7 @@ Navigate to Manage Jenkins → Tools → Install JDK 17 and Node.js 16 → Press
 
 ---
 
-### Step 4 — Setting Up Sonar Server Configuration in Jenkins
+### Step 5 — Setting Up Sonar Server Configuration in Jenkins
 
 Retrieve the Public IP Address of your EC2 Instance. As Sonarqube operates on Port 9000, access it using <Public IP>:9000. Navigate to your Sonarqube Server and follow these steps:
 
@@ -358,7 +388,7 @@ The report has been successfully generated, and the status indicates a successfu
 
 ---
 
-### Step 5 — Integrate OWASP Dependency Check Plugins
+### Step 6 — Integrate OWASP Dependency Check Plugins
 
 Navigate to the Dashboard, then proceed to Manage Jenkins. From there, head to the Plugins section, and locate OWASP Dependency-Check. Click on the plugin, and proceed to install it seamlessly, avoiding the need for a system restart.
 
@@ -408,7 +438,7 @@ In the status, you will observe the generation of a graph alongside vulnerabilit
 
 ---
 
-### Step 6: Build and push your Docker image for seamless deployment.
+### Step 7: Build and push your Docker image for seamless deployment.
 
 To set up Docker in our system, follow these steps:
 
@@ -498,6 +528,7 @@ terraform destroy --auto-approve
 <img width="721" height="635" alt="image" src="https://github.com/user-attachments/assets/029e5484-5d50-4408-8abe-38c907300046" />
 
 ---
+
 
 
 
