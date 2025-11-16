@@ -50,7 +50,7 @@ Provide your Aws Access key and Secret Access key
 resource "aws_instance" "web" {
   ami                    = "ami-0f5ee92e2d63afc18"   #change ami id for different region
   instance_type          = "t2.large"
-  key_name               = "Mumbai"
+  key_name               = "Mumbai"   #change your keynanme
   vpc_security_group_ids = [aws_security_group.Jenkins-sg.id]
   user_data              = templatefile("./install.sh", {})
 
@@ -528,6 +528,7 @@ terraform destroy --auto-approve
 <img width="721" height="635" alt="image" src="https://github.com/user-attachments/assets/029e5484-5d50-4408-8abe-38c907300046" />
 
 ---
+
 
 
 
