@@ -7,27 +7,27 @@
 ---
 ### Step 1: IAM User Creation
 
-1.Access the AWS Console
-2.Locate and select the “Search” field.
+1. Access the AWS Console
+2. Locate and select the “Search” field.
 3. Navigate IAM Options
 4. Click on “Users”
 5. Click ‘Create Users’
 6. Click the “User name” field.
-7.Enter the name you’d like to send warm wishes to or express your thoughts about.
-8.Click Next to spread joy and positivity!
-9.Access the “Attach policies directly” feature by clicking.
+7. Enter the name you’d like to send warm wishes to or express your thoughts about.
+8. Click Next to spread joy and positivity!
+9. Access the “Attach policies directly” feature by clicking.
   Check this box with administrator privileges.
 
 <img width="1137" height="550" alt="image" src="https://github.com/user-attachments/assets/e1f15032-914e-4c98-a21b-0b25e02c2ae5" />
 
-10.Click “Next”
-11.Click “Create User”
-12.Select the recently generated user, in this instance, User01.
-13.Open the “Security credentials” tab and click.
-14.Generate Access Key
-15.Select this radio button using the Command Line Interface (CLI)
-16.Click Next
-17.Download your data in .csv format
+10. Click “Next”
+11. Click “Create User”
+12. Select the recently generated user, in this instance, User01.
+13. Open the “Security credentials” tab and click.
+14. Generate Access Key
+15. Select this radio button using the Command Line Interface (CLI)
+16. Click Next
+17. Download your data in .csv format
 
 ---
 ### Step 2: Configure AWS in VS Code or CMD or instance
@@ -528,6 +528,7 @@ terraform destroy --auto-approve
 <img width="721" height="635" alt="image" src="https://github.com/user-attachments/assets/029e5484-5d50-4408-8abe-38c907300046" />
 
 ---
+
 
 
 
