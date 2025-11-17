@@ -32,7 +32,7 @@
 ---
 ### Step 2: Configure AWS in VS Code or CMD or instance
 
-## awscli v2 downloade
+## awscli v2 download
 ```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
@@ -562,6 +562,7 @@ terraform destroy --auto-approve
 <img width="721" height="635" alt="image" src="https://github.com/user-attachments/assets/029e5484-5d50-4408-8abe-38c907300046" />
 
 ---
+
 
 
 
