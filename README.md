@@ -135,15 +135,16 @@ resource "aws_security_group" "Jenkins-sg" {
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+      source = "hashicorp/aws"
+      version = "6.21.0"
     }
   }
 }
-
-# Configure the AWS Provider
 provider "aws" {
-  region = "ap-south-1"  #change your region
+  region     = "ap-south-1"
+  access_key = "<your-access-key>"
+  secret_key = "<your-secret-access-key>"
+
 }
 ```
 ---
@@ -562,6 +563,7 @@ terraform destroy --auto-approve
 <img width="721" height="635" alt="image" src="https://github.com/user-attachments/assets/029e5484-5d50-4408-8abe-38c907300046" />
 
 ---
+
 
 
 
