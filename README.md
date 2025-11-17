@@ -32,6 +32,40 @@
 ---
 ### Step 2: Configure AWS in VS Code or CMD or instance
 
+## awscli v2 downloade
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
+---
+
+## Install terraform on ubuntu
+```
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+```
+---
+Add the HashiCorp GPG key.
+```
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+```
+---
+Add the official HashiCorp Linux repository.
+```
+sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+```
+---
+Update your package list and install Terraform:
+```
+sudo apt-get update && sudo apt-get install terraform
+```
+---
+verify the installation.
+```
+terraform --version
+```
+---
+
 Navigate to either VS Code or CMD based on your preference.
 ```
 aws configure
@@ -528,6 +562,7 @@ terraform destroy --auto-approve
 <img width="721" height="635" alt="image" src="https://github.com/user-attachments/assets/029e5484-5d50-4408-8abe-38c907300046" />
 
 ---
+
 
 
 
