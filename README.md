@@ -187,10 +187,10 @@ sudo apt-get install trivy -y
 ## Terraform commands to provision
 
 ```
-terraform init
-terraform validate
-terraform plan
-terraform apply
+sudo terraform init
+sudo terraform validate
+sudo terraform plan
+sudo terraform apply
 ```
 ---
 
@@ -562,6 +562,7 @@ terraform destroy --auto-approve
 <img width="721" height="635" alt="image" src="https://github.com/user-attachments/assets/029e5484-5d50-4408-8abe-38c907300046" />
 
 ---
+
 
 
 
